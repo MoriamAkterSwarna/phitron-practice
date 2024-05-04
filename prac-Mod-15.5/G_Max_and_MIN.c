@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 void Max_Min(int *arr, int N){
-    scanf("%d", &N);
+    
     for(int i = 0; i < N; i++){
         scanf("%d", &arr[i]);
     }
@@ -21,6 +21,7 @@ void Max_Min(int *arr, int N){
 int main()
 {
     int N;
+    scanf("%d", &N);
     int arr[N];
     Max_Min(arr, N);
     return 0;
