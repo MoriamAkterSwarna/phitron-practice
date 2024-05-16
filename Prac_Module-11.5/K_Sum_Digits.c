@@ -3,18 +3,29 @@
 int main()
 {
     int n;
-    scanf("%d", &n);
-    long long int A[n];
-    long long int sum = 0;
+    scanf("%d\n", &n);
+    char A[n+1];
+     int sum = 0;
+    
+    // fgets(A, n+1, stdin);
+
     for(int i = 0; i < n; i++)
     {
-        scanf("%lld", &A[i]);
+        scanf("%c", &A[i]);
     }
-    for(int i = 0; i < n; i++)
+    
+    for(int i = 0;  i < n; i++)
     {
-        sum = sum + A[i];
-    }
+        if( A[i] >= '0' && A[i] <= '9'){
+        int val = A[i] - '0';
+        sum = sum + val;
+        }
+        
+    } 
    
-    printf("%lld", sum);
+    printf("%d", sum);
     return 0;
 }
+
+
+
