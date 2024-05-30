@@ -11,7 +11,7 @@ class Student{
     int math_marks;
     int eng_marks; 
 
-    int totoal_marks(){
+    int total_marks(){
         return math_marks + eng_marks; 
     }
     
@@ -19,10 +19,10 @@ class Student{
 };
 
 bool cmp(Student a, Student b){
-    if(a.totoal_marks() == b.totoal_marks()){
+    if(a.total_marks() == b.total_marks()){
         return a.id < b.id; 
     }
-    return a.totoal_marks() > b.totoal_marks(); 
+    return a.total_marks() > b.total_marks(); 
 }
 
 int main(){
