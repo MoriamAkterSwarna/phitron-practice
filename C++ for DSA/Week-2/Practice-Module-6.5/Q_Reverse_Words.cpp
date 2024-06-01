@@ -7,13 +7,23 @@ void reverseWords( stringstream &s) {
        
 
         if(s >> word){
+
             for(int i = word.size()-1; i >= 0; i--){
                 cout << word[i];
             
             }
-            cout << " ";
-            reverseWords(s);
+
+
+                if(s.peek() != EOF)
+                cout << " ";
+
+                    reverseWords(s);
+
+                
+                
         }
+        
+            
    
 }
 
@@ -21,7 +31,7 @@ int main(){
 
     string s; 
     getline(cin, s); 
-
+    
     stringstream ss(s); 
 
     reverseWords(ss);

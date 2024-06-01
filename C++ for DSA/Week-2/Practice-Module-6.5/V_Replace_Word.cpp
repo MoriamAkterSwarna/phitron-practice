@@ -7,14 +7,14 @@ int main(){
     string s;
     getline(cin, s); 
 
-    while(s.find('EGYPT', 5) != -1){
-        int t = s.find("EGYPT", 5);
+    while(s.find("EGYPT") != -1){
+        int t = s.find("EGYPT");
 
     s = s.replace(t, 5, " ");
 
     
     }
-cout << s << endl;
+    cout << s << endl;
 
 
 

@@ -13,9 +13,10 @@ int main(){
     for(char c: s){
         
             if(isalpha(c)){
-                cout << c <<endl; 
-            if(!flag){
+               
+            if(flag == false){
                 count++;
+                flag = true;
             }
             
         } else if(isspace(c)){
