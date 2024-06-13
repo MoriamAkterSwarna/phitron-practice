@@ -14,7 +14,7 @@ int main(){
         cin>>a[i];
     } 
 
-    int pre[n]; 
+    long long int pre[n]; 
     pre[0] = a[0]; 
 
     for(int i=1;i<n;i++){
