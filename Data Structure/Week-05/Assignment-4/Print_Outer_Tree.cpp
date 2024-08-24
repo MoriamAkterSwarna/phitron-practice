@@ -16,6 +16,7 @@ class Node {
         }
 
     };
+
 Node* inputLevelOrder( ) {
 
     int val;
@@ -64,47 +65,66 @@ Node* inputLevelOrder( ) {
 
     }
 
-void printLevelOrder( Node* root , int level ) {
-    if ( root == NULL || level < 0 )
-        return;
+void left_outer_tree( Node* root ) {
+    if ( !root ) return;
 
-    queue<Node*> q;
-    q.push( root );
+    if ( root->left ) {
+        left_outer_tree( root->left );
+        cout << root->val << " ";
 
-    int crntLevel = 0;
-    while ( !q.empty( ) ) {
-        int sz = q.size( );
-        while ( sz-- ) {
-            Node* node = q.front( );
-            q.pop( );
-
-            if ( crntLevel == level ) {
-                cout << node->val << " ";
-                }
-
-            if ( node->left ) {
-                q.push( node->left );
-                }
-            if ( node->right ) {
-                q.push( node->right );
-                }
-            }
-        crntLevel++;
         }
-
-    if ( crntLevel <= level ) {
-        cout << "Invalid" << endl;
+    else if ( root->right ) {
+        left_outer_tree( root->right );
+        cout << root->val << " ";
+        }
+    else {
+        cout << root->val << " ";
         }
     }
+void right_outer_tree( Node* root ) {
+    if ( !root ) return;
+
+    if ( root->right ) {
+        cout << root->val << " ";
+        right_outer_tree( root->right );
+        }
+    else if ( root->left ) {
+        cout << root->val << " ";
+        right_outer_tree( root->left );
+        }
+    else {
+        cout << root->val << " ";
+        }
+    }
+
+
+void outer_tree( Node* root ) {
+    if ( !root ) return;
+
+    if ( root->left ) {
+
+        left_outer_tree( root->left );
+        }
+    cout << root->val << " ";
+    if ( root->right ) {
+
+        right_outer_tree( root->right );
+        }
+
+
+
+    }
+
+
 int main( ) {
+
     Node* root = inputLevelOrder( );
 
-    int l;
-    cin >> l;
-
-    printLevelOrder( root , l );
-
+    outer_tree( root );
 
 
     return 0;
     }
+
+
+
