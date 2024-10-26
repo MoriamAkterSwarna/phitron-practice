@@ -42,7 +42,7 @@ int main( ) {
 
         }
     memset( vis , false , sizeof( vis ) );
-    memset( parA , -1 , sizeof( parA ); )
+    memset( parA , -1 , sizeof( parA ) );
 
         ans = false;
     for ( int i = 0; i < n; i++ ) {
@@ -52,7 +52,7 @@ int main( ) {
             }
         }
 
-    for ( int i 0; i < n; i++ ) {
+    for ( int i = 0; i < n; i++ ) {
         cout << parA [ i ] << " ";
         }
 
